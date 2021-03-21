@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  min-height: 100vh;
+  max-height: 10vh;
   overflow: hidden;
 }
 
@@ -31,14 +31,15 @@ h1 {
   display: flex;
   justify-content: space-between;
   flex: 0 0 auto;
-  width: calc(100% - 210px);
+  width: 200px;
+  max-height: 200px;
 }
 
 .logColumn {
   display: flex;
   flex-direction: column;
   flex: 1 1 50%;
-  padding-right: 30px;
+  padding-right: 10px;
 }
 
 #ad {

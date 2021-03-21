@@ -6,6 +6,8 @@ import {
 } from '@overwolf/overwolf-api-ts';
 import RunningGameInfo = overwolf.games.RunningGameInfo;
 
+
+
 // The background controller holds all of the app's background logic - hence its name. it has
 // many possible use cases, for example sharing data between windows, or, in our case,
 // managing which window is currently presented to the user. To that end, it holds a dictionary
@@ -25,7 +27,7 @@ class BackgroundController {
         // When a League game is started or is ended, toggle the app's windows
         this._leagueGameListener = new OWGameListener({
             onGameStarted: this.toggleWindows.bind(this),
-            onGameEnded: this.toggleWindows.bind(this)
+            onGameEnded: this.toggleWindows.bind(this) 
         });
     };
 

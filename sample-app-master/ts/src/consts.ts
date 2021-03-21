@@ -4,7 +4,8 @@ const interestingFeatures = [
     'game_data',
     'live_client_data',
     'death',
-    'gameTime'
+    'gameTime',
+    'matchEnd'
     
 ];
 

@@ -23,14 +23,27 @@ class InGame extends AppWindow {
     this._eventsLog = document.getElementById('eventsLog');
     this._infoLog = document.getElementById('infoLog');
 
+    const gamesplayed = document.createElement("gamesplayed");
+    // 3. Add the text content
+    gamesplayed.textContent = "1";
+    // 4. Append the p element to the div element
+    this._eventsLog?.appendChild(gamesplayed);
+
+    const gamesallotted = document.createElement("gamesallotted");
+    // 3. Add the text content
+    gamesallotted.textContent = "4";
+    // 4. Append the p element to the div element
+    this._infoLog?.appendChild(gamesallotted);
+
+
     this.setToggleHotkeyBehavior();
     this.setToggleHotkeyText();
 
-    this._leagueGameEventsListener = new OWGamesEvents({
+  /*  this._leagueGameEventsListener = new OWGamesEvents({
       onInfoUpdates: this.onInfoUpdates.bind(this),
       onNewEvents: this.onNewEvents.bind(this)
     },
-      interestingFeatures);
+      interestingFeatures);*/
   }
 
   public static instance() {
@@ -45,16 +58,18 @@ class InGame extends AppWindow {
     this._leagueGameEventsListener.start();
   }
 
-  private onInfoUpdates(info) {
+  /*private onInfoUpdates(info) {
     this.logLine(this._infoLog, info, false);
-  }
+  }*/
 
   // Special events will be highlighted in the event log
-  private onNewEvents(e) {
+ /* private onNewEvents(e) {
     const shouldHighlight = e.events.some(event => {
       switch (event.name) {
         
         case 'death':
+
+        case 'matchEnd':
         
           return true;
       }
@@ -62,7 +77,7 @@ class InGame extends AppWindow {
       return false
     });
     this.logLine(this._eventsLog, e, shouldHighlight);
-  }
+  }*/
 
   // Displays the toggle minimize/restore hotkey in the window header
   private async setToggleHotkeyText() {
@@ -90,7 +105,7 @@ class InGame extends AppWindow {
   }
 
   // Appends a new line to the specified log
-  private logLine(log: HTMLElement, data, highlight) {
+ /* private logLine(log: HTMLElement, data, highlight) {
     console.log(`${log.id}:`);
     console.log(data);
     const line = document.createElement('pre');
@@ -107,7 +122,7 @@ class InGame extends AppWindow {
     if (shouldAutoScroll) {
       log.scrollTop = log.scrollHeight;
     }
-  }
+  }*/
 }
 
 InGame.instance().run();
