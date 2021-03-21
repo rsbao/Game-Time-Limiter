@@ -22,7 +22,7 @@ class BackgroundController {
         this._windows[windowNames.desktop] = new OWWindow(windowNames.desktop);
         this._windows[windowNames.inGame] = new OWWindow(windowNames.inGame);
 
-        // When a Fortnite game is started or is ended, toggle the app's windows
+        // When a League game is started or is ended, toggle the app's windows
         this._leagueGameListener = new OWGameListener({
             onGameStarted: this.toggleWindows.bind(this),
             onGameEnded: this.toggleWindows.bind(this)
@@ -39,7 +39,7 @@ class BackgroundController {
     }
 
     // When running the app, start listening to games' status and decide which window should
-    // be launched first, based on whether Fortnite is currently running
+    // be launched first, based on whether League is currently running
     public async run() {
         this._leagueGameListener.start();
         const currWindow = await this.isLeagueRunning() ? windowNames.inGame : windowNames.desktop;
@@ -66,7 +66,7 @@ class BackgroundController {
         return info && info.isRunning && this.isGameLeague(info);
     }
 
-    // Identify whether the RunningGameInfo object we have references Fortnite
+    // Identify whether the RunningGameInfo object we have references League
     private isGameLeague(info: RunningGameInfo) {
         return info.classId === leagueClassId;
     }

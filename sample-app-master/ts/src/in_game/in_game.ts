@@ -6,7 +6,7 @@ import {
 import { interestingFeatures, hotkeys, windowNames, leagueClassId } from "../consts";
 import WindowState = overwolf.windows.WindowStateEx;
 
-// The window displayed in-game while a Fortnite game is running.
+// The window displayed in-game while a League game is running.
 // It listens to all info events and to the game events listed in the consts.ts file
 // and writes them to the relevant log using <pre> tags.
 // The window also sets up Ctrl+F as the minimize/restore hotkey.

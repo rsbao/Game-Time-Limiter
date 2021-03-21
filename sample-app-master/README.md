@@ -2,7 +2,7 @@
 
 This repository contains sample apps that demonstrate some basic points and flows that are relevant when developing Overwolf apps:
 
-- The apps will launch automatically when Fortnite starts
+- The apps will launch automatically when League starts
 - Register to the overwolf.games.events API in order to receive real time events from the game.
 - Define a custom hotkey to be used in-game
 - Communication between the app windows according to our best practices 
